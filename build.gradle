@@ -1,0 +1,35 @@
+buildscript {
+    ext.kotlin_version = '1.2.0'
+    ext.kategory_version = '0.3.10'
+    ext.retrofit_version = '2.3.0'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+group 'fptest'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'kotlin'
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url 'https://dl.bintray.com/kategory/maven' }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    // Kategory
+    compile "io.kategory:kategory:$kategory_version"
+    compile "io.kategory:kategory-effects:$kategory_version"
+
+    // Retrofit
+    compile "com.squareup.retrofit2:retrofit:$retrofit_version"
+    compile "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+}
