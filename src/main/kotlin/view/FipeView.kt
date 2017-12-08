@@ -8,8 +8,8 @@ class FipeView : BaseView {
     override fun showBrands(brands: List<Brand>, logger: Logger) {
         brands.sortedBy { it.codigo }
                 .forEach {
-                    logger.verbose(", Code: ${it.codigo}")
-                    logger.verbose(", Name: ${it.nome}")
+                    logger.verbose(" Code: ${it.codigo}")
+                    logger.verbose(" Name: ${it.nome}")
                 }
     }
 
